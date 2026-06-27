@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amrita Dhillon — Professor of Economics</title>
+  <meta name="description" content="Amrita Dhillon is a Professor of Economics at King's College London, working on political economy, development economics, and social networks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1A2744;
+      --gold: #B8862A;
+      --text: #1c1c1a;
+      --muted: #6b6b67;
+      --faint: #9a9a96;
+      --rule: #e0ddd6;
+      --bg: #F8F6F1;
+      --surface: #f0ede6;
+      --accent-bg: #eef3fb;
+      --accent: #1a4fa0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); }
+    a:hover { color: var(--navy); }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 3rem;
+      padding: 3.5rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 54px;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 em { font-style: italic; }
+    .hero-bio {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.75;
+      margin-bottom: 1.6rem;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem 1.5rem;
+      font-size: 13px;
+    }
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid #b5c8e8;
+      padding-bottom: 1px;
+    }
+    .contact-row a:hover { color: var(--navy); border-color: var(--navy); }
+    .photo-box {
+      width: 180px;
+      height: 220px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: start;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-initials {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      color: var(--faint);
+    }
+
+    section { padding: 2.75rem 0; border-bottom: 1px solid var(--rule); }
+    section:last-of-type { border-bottom: none; padding-bottom: 4rem; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .cluster { margin-bottom: 2.25rem; }
+    .cluster:last-child { margin-bottom: 0; }
+    .cluster-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 19px;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      padding-left: 0.85rem;
+      border-left: 2px solid var(--gold);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .wp-card {
+      background: var(--surface);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+    .wp-title a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .wp-title a:hover { color: var(--accent); }
+    .wp-meta {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin-left: 7px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    .paper-list { list-style: none; display: grid; gap: 0.75rem; }
+    .paper-item {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0.5rem;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .paper-year {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      padding-top: 2px;
+    }
+    .paper-title a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .paper-title a:hover { color: var(--accent); border-color: #b5c8e8; }
+    .paper-meta { color: var(--muted); font-size: 13px; }
+    .paper-venue { font-style: italic; }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2.5rem;
+    }
+    .bio-item { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .bio-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 0;
+      font-size: 12.5px;
+      color: var(--faint);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero { grid-template-columns: 1fr; }
+      .photo-box { display: none; }
+      .hero h1 { font-size: 38px; }
+      .bio-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="nav-name">Amrita Dhillon</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="https://sites.google.com/view/amrita-dhillon/cv" target="_blank">CV</a></li>
+      <li><a href="https://sites.google.com/view/amrita-dhillon/popular-writing" target="_blank">Writing</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Professor of Economics · King's College London</p>
+      <h1>Amrita<br><em>Dhillon</em></h1>
+      <p class="hero-bio">I study political economy, development economics, and social networks — combining theory and empirics. Recent work focuses on female labour force participation in India, voting with blockchain, and how social ties shape labour productivity.</p>
+      <div class="contact-row">
+        <a href="mailto:amrita.dhillon@kcl.ac.uk">amrita.dhillon@kcl.ac.uk</a>
+        <a href="https://sites.google.com/view/amrita-dhillon/cv" target="_blank">CV (PDF)</a>
+        <a href="https://scholar.google.com/scholar?q=Amrita+Dhillon+economics" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+    <div class="photo-box">
+      <span class="photo-initials">AD</span>
+    </div>
+  </div>
+
+  <section id="research">
+    <p class="section-label">Working papers</p>
+
+    <div class="cluster">
+      <h2 class="cluster-title">Political Economy &amp; Social Activism</h2>
+      <div class="wp-card">
+        <div class="wp-title"><a href="https://warwick.ac.uk/fac/soc/economics/research/centres/cage/publications/workingpapers/2023/information_aggregation_with_delegation_of_votes" target="_blank">Information Aggregation with Delegation of Votes</a><span class="badge">R&amp;R</span></div>
+        <div class="wp-meta">with G. Kotsialou, D. Ravindran &amp; D. Xefteris · <em>International Economic Review</em></div>
+      </div>
+      <div class="wp-card">
+        <div class="wp-title"><a href="https://docs.google.com/document/d/1y5m4gISSwFVJDLnmuceeTLXEp0avAhP6Y_8IoDMcH_w/edit" target="_blank">Exercising More Power Towards the Common Good</a></div>
+        <div class="wp-meta">with G. Kotsialou &amp; D. Xefteris</div>
+      </div>
+      <div class="wp-card">
+        <div class="wp-title"><a href="https://warwick.ac.uk/fac/soc/economics/research/centres/cage/publications/workingpapers/2023/activating_change_the_role_of_information_and_beliefs_in_social_activism/" target="_blank">Activating Change: The Role of Information and Beliefs in Social Activism</a></div>
+        <div class="wp-meta">with F. Afridi, A. Basistha &amp; D. Serra</div>
+      </div>
+      <div class="wp-card">
+        <div class="wp-title"><a href="https://warwick.ac.uk/fac/soc/economics/research/centres/cage/publications/workingpapers/2023/can_crises_affect_citizen_activism_evidence_from_a_pandemic/" target="_blank">Can Crises Affect Citizen Activism? Evidence from a Pandemic</a></div>
+        <div class="wp-meta">with F. Afridi, A. Basistha &amp; D. Serra</div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <h2 class="cluster-title">Development &amp; Gender</h2>
+      <div class="wp-card">
+        <div class="wp-title"><a href="https://warwick.ac.uk/fac/soc/economics/research/centres/cage/publications/workingpapers/2023/social_networks_gender_norms_and_labor_supply_experimental_evidence_using_a_job_search_platform/" target="_blank">Social Networks, Gender Norms and Labor Supply: Experimental Evidence</a><span class="badge">R&amp;R</span></div>
+        <div class="wp-meta">with F. Afridi, S. Roy &amp; N. Sangwan · <em>AEJ: Applied Economics</em></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Published &amp; forthcoming</p>
+
+    <div class="cluster">
+      <h2 class="cluster-title">Development &amp; Labour</h2>
+      <ul class="paper-list">
+        <li class="paper-item"><span class="paper-year">2025</span><span><span class="paper-title"><a href="https://warwick.ac.uk/fac/soc/economics/research/centres/cage/publications/workingpapers/2024/elections_and_rural_road_construction_evidence_from_india/" target="_blank">Elections and Rural Road Construction: Evidence from India</a></span><span class="paper-meta"> · with A. Basistha &amp; A. Roy Chaudhuri · <span class="paper-venue">Economic Development and Cultural Change (forthcoming)</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2024</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0167268123004638" target="_blank">The Ties That Bind Us: Social Networks and Productivity in the Factory</a></span><span class="paper-meta"> · with F. Afridi &amp; S. Sharma · <span class="paper-venue">Journal of Economic Behaviour and Organisation</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2021</span><span><span class="paper-title"><a href="https://www.journals.uchicago.edu/doi/abs/10.1086/704512" target="_blank">Employee Referral, Social Proximity and Worker Discipline</a></span><span class="paper-meta"> · with V. Iversen &amp; G. Torsvik · <span class="paper-venue">Economic Development and Cultural Change</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2020</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0927537120301329" target="_blank">Hiring an Employee's Friends is Good for Business</a></span><span class="paper-meta"> · with Peeters, Bartrum &amp; Yuksel · <span class="paper-venue">Labour Economics</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2020</span><span><span class="paper-title"><a href="https://econpapers.repec.org/article/eeedeveco/v_3a144_3ay_3a2020_3ai_3ac_3as0304387820300201.htm" target="_blank">Social Connections, Caste Identity and Financial Incentives</a></span><span class="paper-meta"> · with F. Afridi, Xin Li &amp; S. Sharma · <span class="paper-venue">Journal of Development Economics</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2011</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0047272710001301" target="_blank">Development and the Interaction of Enforcement Institutions</a></span><span class="paper-meta"> · with J. Rigolini · <span class="paper-venue">Journal of Public Economics</span></span></span></li>
+      </ul>
+    </div>
+
+    <div class="cluster" style="margin-top: 2rem;">
+      <h2 class="cluster-title">Political Economy</h2>
+      <ul class="paper-list">
+        <li class="paper-item"><span class="paper-year">2024</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268124002385" target="_blank">Electoral Competition, Uncertainty and Corruption</a></span><span class="paper-meta"> · with F. Afridi &amp; S. Bhattacharya · <span class="paper-venue">Journal of Economic Behaviour and Organisation</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2020</span><span><span class="paper-title"><a href="https://academic.oup.com/ej/article/130/631/2207/5806947" target="_blank">Secession with Natural Resources</a></span><span class="paper-meta"> · with P. Krishnan, M. Patnam &amp; C. Perroni · <span class="paper-venue">Economic Journal</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2019</span><span><span class="paper-title"><a href="https://academic.oup.com/oep/article/71/2/320/5088386" target="_blank">Sovereign Debt: Election Concerns and the Democratic Disadvantage</a></span><span class="paper-meta"> · with A. Pickering &amp; T. Sjostrom · <span class="paper-venue">Oxford Economic Papers</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2017</span><span><span class="paper-title"><a href="https://onlinelibrary.wiley.com/doi/10.1111/jpet.12278" target="_blank">Corruption, Intrinsic Motivation and the Love of Praise</a></span><span class="paper-meta"> · with A. Nicolo &amp; F. Xu · <span class="paper-venue">Journal of Public Economic Theory</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2009</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0304387808000059" target="_blank">Electoral Goals and Center-State Transfers: India</a></span><span class="paper-meta"> · with Arulampalam, Dasgupta &amp; Dutta · <span class="paper-venue">Journal of Development Economics</span></span></span></li>
+      </ul>
+    </div>
+
+    <div class="cluster" style="margin-top: 2rem;">
+      <h2 class="cluster-title">Voting &amp; Social Choice</h2>
+      <ul class="paper-list">
+        <li class="paper-item"><span class="paper-year">2021</span><span><span class="paper-title"><a href="http://dx.doi.org/10.1561/0700000071" target="_blank">Voting Over a Distributed Ledger: An Interdisciplinary Perspective</a></span><span class="paper-meta"> · with G. Kotsialou, P. McBurney &amp; L. Riley · <span class="paper-venue">Foundations and Trends in Microeconomics</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2015</span><span><span class="paper-title"><a href="https://academic.oup.com/rfs/article/28/2/521/1600554" target="_blank">Ownership Structure, Voting and Risk</a></span><span class="paper-meta"> · with S. Rossetto · <span class="paper-venue">Review of Financial Studies</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2004</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0899825603000502" target="_blank">When Are Plurality Rule Voting Games Dominance Solvable?</a></span><span class="paper-meta"> · with B. Lockwood · <span class="paper-venue">Games and Economic Behaviour</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">1999</span><span><span class="paper-title"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00033" target="_blank">Relative Utilitarianism</a></span><span class="paper-meta"> · with J.-F. Mertens · <span class="paper-venue">Econometrica</span></span></span></li>
+      </ul>
+    </div>
+
+    <div class="cluster" style="margin-top: 2rem;">
+      <h2 class="cluster-title">Public Economics</h2>
+      <ul class="paper-list">
+        <li class="paper-item"><span class="paper-year">2009</span><span><span class="paper-title"><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.509.2238&rep=rep1&type=pdf" target="_blank">Games of Status and Discriminatory Contracts</a></span><span class="paper-meta"> · with A. Herzog-Stein · <span class="paper-venue">Games and Economic Behaviour</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">2007</span><span><span class="paper-title"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9779.2007.00312.x" target="_blank">Tax Competition Reconsidered</a></span><span class="paper-meta"> · with M. Wooders &amp; B. Zissimos · <span class="paper-venue">Journal of Public Economic Theory</span></span></span></li>
+        <li class="paper-item"><span class="paper-year">1999</span><span><span class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0047272798000875" target="_blank">Implementing Tax Coordination</a></span><span class="paper-meta"> · with K.A. Scharf &amp; C. Perroni · <span class="paper-venue">Journal of Public Economics</span></span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="bio">
+    <p class="section-label">Background</p>
+    <div class="bio-grid">
+      <div class="bio-item"><span class="bio-label">Position</span>Professor of Economics, King's College London</div>
+      <div class="bio-item"><span class="bio-label">Research areas</span>Political economy · Development economics · Social networks · Voting theory · Information economics</div>
+      <div class="bio-item"><span class="bio-label">Editorial roles</span>Associate Editor, <em>International Tax and Public Finance</em> (2016–present)<br>Associate Editor, <em>Journal of Public Economic Theory</em> (2004–present)<br>Senior Editor, <em>Oxford Open Economics</em></div>
+      <div class="bio-item"><span class="bio-label">Grants &amp; advisory</span>PI, GI-ACE Anti-Corruption Initiative (3 years)<br>Advisory board, International Corruption Academy (GPMC)</div>
+      <div class="bio-item"><span class="bio-label">Past service</span>Council member, Royal Economic Society (UK)<br>Academic advisory panel, UK Dept of Environment, Food and Rural Affairs</div>
+      <div class="bio-item"><span class="bio-label">Selected venues</span>Econometrica · Journal of Economic Theory · Journal of Public Economics · Review of Financial Studies · AEJ: Applied · Economic Journal</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Amrita Dhillon · King's College London · <a href="mailto:amrita.dhillon@kcl.ac.uk">amrita.dhillon@kcl.ac.uk</a>
+  </div>
+</footer>
+
+</body>
+</html>
